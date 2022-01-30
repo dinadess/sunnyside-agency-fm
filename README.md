@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/responsive-sunnyside-agency-landing-page-css-flexbox-and-grid-4ItVM-uwW)
+- Live Site URL: [Take a look at my page here](https://dinadess.github.io/sunnyside-agency-fm/)
 
 ## My process
 
@@ -73,5 +73,4 @@ I'll keep reading about the srcset ans sizes attributes to get more confident in
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@dinadess](https://www.frontendmentor.io/profile/dinaDess)
