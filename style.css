@@ -74,6 +74,12 @@ img {
   font-weight: 700;
 }
 
+/* Outline */
+:focus {
+  outline: 2px solid var(--yellow);
+  outline-offset: 4px;
+}
+
 /* Header */
 header {
   background-image: url(./images/mobile/image-header.jpg);
@@ -95,10 +101,13 @@ header .links-container {
 .menu {
   height: 25px;
   width: 30px;
+  border: none;
   background-image: url(./images/icon-hamburger.svg);
+  background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .navigation {
@@ -112,8 +121,18 @@ header .links-container {
   z-index: 999;
 }
 
+.navigation ul {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .navigation.active {
   top: 95px;
+}
+
+.navigation.active ul {
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .navigation::before {
@@ -175,25 +194,34 @@ header .links-container {
 .hero-text-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 5rem;
   position: relative;
-  max-width: 200px;
-}
-
-.hero-text::after {
-  content: url("./images/icon-arrow-down.svg");
-  display: inline-block;
-  position: absolute;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .hero-text {
+  font-size: 2.2rem;
   text-transform: uppercase;
   text-align: center;
   color: var(--white);
-  letter-spacing: 8px;
+  letter-spacing: 0.6rem;
+}
+
+.hero-text-container .arrow-down {
+  margin-top: 4rem;
+  cursor: pointer;
+  animation: up-down 1s ease-in-out infinite alternate-reverse;
+}
+
+/* Arrow down animation */
+@keyframes up-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1.5rem);
+  }
 }
 
 /* Main Part */
@@ -441,6 +469,11 @@ footer a {
     padding: 0;
   }
 
+  .navigation ul {
+    visibility: visible;
+    pointer-events: auto;
+  }
+
   .navigation::before {
     content: none;
   }
@@ -467,7 +500,12 @@ footer a {
   }
 
   .hero-text-container {
-    min-width: max-content;
+    /* min-width: max-content; */
+    min-width: 250px;
+  }
+
+  .hero-text {
+    font-size: 3rem;
   }
 
   .hero-text::after {
